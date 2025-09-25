@@ -1,0 +1,19 @@
+name: Hello World
+
+on: [push] # when to trigger this pipeline. we can trigger on push or manual or some other events like creating PR,updating PR, creating branches, creatnmg issues
+
+# on:
+#   push: # if any body push the code to this repo, it will trigger
+#     branches:
+#       - main
+
+jobs: # like pipeline in jenkins. one workflow can have multile pipelines.
+  greeting:
+    runs-on: ubuntu-latest # Linux OS, we can have windows or MAC.
+    steps:
+      - name: Say Hello
+        if: github.ref == 'refs/heads/feature-**'
+        run: echo "Hello, GitHub Actions!"
+      - name: Say Hai
+        if: github.ref == 'refs/heads/main'
+        run: echo "Hai, Charan!"
