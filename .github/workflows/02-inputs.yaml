@@ -1,17 +1,34 @@
-name: Hello World
+name: Inputs
 
 on: [push] # when to trigger this pipeline. we can trigger on push or manual or some other events like creating PR,updating PR, creating branches, creatnmg issues
-
-# on:
-#   push: # if any body push the code to this repo, it will trigger
-#     branches:
-#       - main
-
-jobs: # like pipeline in jenkins. one workflow can have multile pipelines.
-  greeting:
-    runs-on: ubuntu-latest # Linux OS, we can have windows or MAC.
+  workflow_dispatch: # means manual trigger
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: true
+        type: boolean
+      tags:
+        description: 'Test scenario tags'
+        required: true
+        type: string
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+jobs:
+  print-tag:
+    runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello, GitHub Actions!"
-      - name: Say Hai
-        run: echo "Hai, GitHub Actions!"
+      - name: Print the input tag to STDOUT
+        run: echo  The tags are ${{ inputs.tags }} 
+      - name: Print the environmnet
+        run: echo  The tags are ${{ inputs.environmnet }}

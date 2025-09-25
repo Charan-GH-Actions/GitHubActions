@@ -4,7 +4,7 @@ name: Hello World
 
 on:
   push: # if any body push the code to this repo, it will trigger
-    branchesa:
+    branches:
       - main
 
 jobs: # like pipeline in jenkins. one workflow can have multile pipelines.
