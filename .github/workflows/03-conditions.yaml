@@ -8,7 +8,7 @@ on: [push] # when to trigger this pipeline. we can trigger on push or manual or 
 #       - main
 
 jobs: # like pipeline in jenkins. one workflow can have multile pipelines.
-  greeting:
+  condition:
     runs-on: ubuntu-latest # Linux OS, we can have windows or MAC.
     steps:
       - name: Say Hello
