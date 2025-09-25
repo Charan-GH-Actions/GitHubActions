@@ -11,9 +11,9 @@ jobs: # like pipeline in jenkins. one workflow can have multile pipelines.
   condition:
     runs-on: ubuntu-latest # Linux OS, we can have windows or MAC.
     steps:
-      - name: Say Hello
+      - name: Step-1::Say Hello
         if: github.ref == 'refs/heads/feature-**'
         run: echo "Hello, GitHub Actions!"
-      - name: Say Hai
+      - name: Step-2::Say Hai
         if: github.ref == 'refs/heads/main'
         run: echo "Hai, Charan!"
