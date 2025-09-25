@@ -1,11 +1,11 @@
 name: Hello World
 
-# on: [push] # when to trigger this pipeline. we can trigger on push or manual or some other events like creating PR,updating PR, creating branches, creatnmg issues
+on: [push] # when to trigger this pipeline. we can trigger on push or manual or some other events like creating PR,updating PR, creating branches, creatnmg issues
 
-on:
-  push: # if any body push the code to this repo, it will trigger
-    branches:
-      - main
+# on:
+#   push: # if any body push the code to this repo, it will trigger
+#     branches:
+#       - main
 
 jobs: # like pipeline in jenkins. one workflow can have multile pipelines.
   greeting:
