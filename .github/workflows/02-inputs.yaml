@@ -1,6 +1,6 @@
 name: Inputs
 
-on: [push] # when to trigger this pipeline. we can trigger on push or manual or some other events like creating PR,updating PR, creating branches, creatnmg issues
+on: # when to trigger this pipeline. we can trigger on push or manual or some other events like creating PR,updating PR, creating branches, creatnmg issues
   workflow_dispatch: # means manual trigger
     inputs:
       logLevel:
